@@ -26,20 +26,17 @@ def find_by_nickname():
         for page in range(2, max_pages-1):
             print(f"Проверяем страницу {page-1}...")
 
-            # Ждём загрузки таблицы
             r = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "#leaderBoardsTable > div.LeaderboardsTable-Rendered"))
             )
 
-            # Получаем все строки таблицы
             lines = r.text.split('\n')
 
-
             try:
-                index = lines.index(nickname)  # Пытаемся найти индекс
-                found = True  # Если не было исключения, значит, строка найдена
+                index = lines.index(nickname)
+                found = True
             except ValueError:
-                found = False  # Если строка не найдена
+                found = False
 
             if found:
                 line_before = lines[index - 1]
