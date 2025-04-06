@@ -31,7 +31,7 @@ async def main():
                     })
 
     df = pd.DataFrame(all_data)
-    df.to_excel("hs_bg_api_leaderboard_async.xlsx", index=False)
+    df.to_excel("data/hs_bg_api_leaderboard_async.xlsx", index=False)
 
 
 if __name__ == "__main__":
