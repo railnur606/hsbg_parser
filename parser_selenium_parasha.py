@@ -17,7 +17,7 @@ def find_by_nickname():
     chrome_options.add_argument("--headless=new")
 
     service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=chrome_options)  # Передаём service, а не строку
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     driver.get(
         f"https://hearthstone.blizzard.com/en-us/community/leaderboards/?region={region}&leaderboardId={leaderboard}")
